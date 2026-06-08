@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encontrando Jesus no Antigo Testamento</title>
+<meta name="theme-color" content="#1a1208">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jesus no AT">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icon-192.svg">
+<link rel="apple-touch-icon" href="icon-192.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  min-height:100vh;
+  background: #1a1208;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, #3a2a0a 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-family: 'Lato', sans-serif;
+  color: #f0e0c0;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ── */
+header {
+  text-align:center;
+  padding: 52px 24px 36px;
+  position: relative;
+}
+.header-ornament {
+  font-size:28px;
+  letter-spacing:12px;
+  color:#c9a84c;
+  opacity:.5;
+  display:block;
+  margin-bottom:16px;
+}
+header h1 {
+  font-family:'Cinzel',serif;
+  font-size:clamp(22px,4.5vw,38px);
+  font-weight:700;
+  color:#e8c97a;
+  letter-spacing:1px;
+  line-height:1.3;
+  text-shadow: 0 0 40px rgba(201,168,76,.3);
+}
+header h1 span { display:block; font-size:.6em; font-weight:400; letter-spacing:3px; color:#a08840; margin-bottom:6px; }
+header p {
+  margin-top:14px;
+  font-family:'IM Fell English',serif;
+  font-style:italic;
+  font-size:15px;
+  color:#9e8860;
+  max-width:520px;
+  margin-left:auto; margin-right:auto;
+  line-height:1.7;
+}
+.divider {
+  width:220px; height:1px;
+  background:linear-gradient(90deg,transparent,#c9a84c,transparent);
+  margin:20px auto 0;
+}
+
+/* ── PROGRESS ── */
+.prog-wrap {
+  max-width:600px; margin:28px auto 0; padding:0 24px;
+}
+.prog-top {
+  display:flex; justify-content:space-between;
+  font-size:11px; letter-spacing:2px; text-transform:uppercase;
+  color:#7a6840; margin-bottom:8px;
+}
+.prog-top b { color:#c9a84c; font-weight:600; }
+.prog-track {
+  height:3px; background:#2e2410; border-radius:99px; overflow:hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.5);
+}
+.prog-fill {
+  height:100%; border-radius:99px;
+  background:linear-gradient(90deg,#7a5a20,#e8c97a,#c9a84c);
+  transition:width .7s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 0 8px rgba(201,168,76,.4);
+}
+
+/* ── SECTION LABELS ── */
+.section-label {
+  text-align:center;
+  font-family:'Cinzel',serif;
+  font-size:11px; letter-spacing:4px; text-transform:uppercase;
+  color:#6a5830;
+  margin:40px 0 20px;
+  display:flex; align-items:center; gap:12px;
+  max-width:680px; margin-left:auto; margin-right:auto;
+  padding:0 20px;
+}
+.section-label::before,.section-label::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg,transparent,#3a2e18);
+}
+.section-label::after { background:linear-gradient(90deg,#3a2e18,transparent); }
+
+/* ── SCROLL CONTAINER ── */
+.scroll-container {
+  max-width:720px; margin:0 auto; padding:0 16px 60px;
+}
+
+/* ── SCROLL ITEM ── */
+.scroll-item {
+  margin-bottom:16px;
+  position:relative;
+}
+
+/* top roller */
+.scroll-roller {
+  height:18px;
+  background:linear-gradient(180deg,#8b6914 0%,#c9a84c 40%,#a07828 60%,#6b5010 100%);
+  border-radius:10px 10px 0 0;
+  box-shadow: 0 -2px 6px rgba(0,0,0,.4), inset 0 2px 3px rgba(255,255,255,.15);
+  position:relative; z-index:2;
+}
+.scroll-roller::before,.scroll-roller::after {
+  content:'';
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:22px; height:22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#e8c060,#8b6010);
+  box-shadow:0 2px 6px rgba(0,0,0,.5);
+}
+.scroll-roller::before { left:-6px; }
+.scroll-roller::after  { right:-6px; }
+
+/* parchment face (header, always visible) */
+.scroll-face {
+  background:
+    linear-gradient(180deg, #f5e8c8 0%, #ede0b0 30%, #e8d89e 100%);
+  border-left: 3px solid #c9a060;
+  border-right: 3px solid #c9a060;
+  padding: 16px 22px;
+  cursor:pointer;
+  display:flex; align-items:center; gap:16px;
+  position:relative; z-index:1;
+  transition: background .2s;
+  user-select:none;
+}
+.scroll-face:hover { background:linear-gradient(180deg,#fdf3d8 0%,#f0e4b8 100%); }
+.scroll-item.locked .scroll-face { cursor:not-allowed; filter:grayscale(.6) brightness(.7); }
+.scroll-item.done .scroll-face { background:linear-gradient(180deg,#f0e8d0 0%,#e5d8a8 100%); }
+
+.num-badge {
+  flex-shrink:0; width:38px; height:38px; border-radius:50%;
+  border:2px solid #c9a060;
+  background:radial-gradient(circle,#f8f0d8,#e0c880);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cinzel',serif; font-size:12px; font-weight:600; color:#6a4a10;
+  box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+.scroll-item.done .num-badge {
+  background:radial-gradient(circle,#c9a84c,#8b6010);
+  color:#fff8e8;
+  border-color:#8b6010;
+}
+
+.face-text { flex:1; }
+.face-book {
+  font-family:'Cinzel',serif; font-size:16px; font-weight:600;
+  color:#3a2800; line-height:1.2;
+}
+.scroll-item.done .face-book { color:#5a3800; }
+.face-tag {
+  font-size:10px; letter-spacing:2px; text-transform:uppercase;
+  color:#9a7840; margin-top:2px;
+}
+.face-arrow {
+  font-size:18px; color:#c9a060;
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+.scroll-item.open .face-arrow { transform:rotate(180deg); }
+.lock-icon { font-size:16px; color:#7a6030; }
+
+/* ── UNROLLING BODY ── */
+.scroll-body {
+  overflow:hidden;
+  max-height:0;
+  transition:max-height .7s cubic-bezier(.4,0,.2,1);
+  background:
+    linear-gradient(180deg,#ede0b0 0%,#e8d898 40%,#ead8a0 100%);
+  border-left:3px solid #c9a060;
+  border-right:3px solid #c9a060;
+  position:relative;
+}
+.scroll-body::before {
+  content:'';
+  position:absolute; inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:0;
+}
+.scroll-item.open .scroll-body { max-height:900px; }
+
+.scroll-inner { padding:20px 24px 24px; position:relative; z-index:1; }
+
+/* aged lines */
+.aged-lines {
+  position:absolute; inset:0; pointer-events:none;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0px, transparent 27px,
+    rgba(160,120,40,.08) 27px, rgba(160,120,40,.08) 28px
+  );
+}
+
+/* context block */
+.context-block {
+  background:rgba(160,120,30,.1);
+  border-left:3px solid #c9a060;
+  border-radius:0 6px 6px 0;
+  padding:12px 16px;
+  margin-bottom:16px;
+}
+.ctx-label {
+  font-family:'Cinzel',serif;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color:#8a6830; margin-bottom:6px;
+}
+.ctx-text {
+  font-family:'IM Fell English',serif;
+  font-size:14px; color:#3a2800; line-height:1.7;
+}
+
+/* prophecy / fulfillment */
+.pf-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:14px;
+  margin-bottom:16px;
+}
+@media(max-width:480px){ .pf-grid { grid-template-columns:1fr; } }
+
+.pf-card {
+  border-radius:6px; padding:14px;
+  position:relative; overflow:hidden;
+}
+.pf-prophecy {
+  background:rgba(100,70,20,.12);
+  border:1px solid rgba(160,120,40,.35);
+}
+.pf-fulfillment {
+  background:rgba(40,90,50,.1);
+  border:1px solid rgba(80,140,80,.3);
+}
+.pf-label {
+  font-size:9px; letter-spacing:2.5px; text-transform:uppercase;
+  font-weight:600; margin-bottom:8px; display:flex; align-items:center; gap:5px;
+}
+.pf-prophecy .pf-label  { color:#8a6020; }
+.pf-fulfillment .pf-label { color:#3a7a4a; }
+.pf-verse {
+  font-family:'IM Fell English',serif; font-style:italic;
+  font-size:13.5px; color:#2e1e00; line-height:1.65; margin-bottom:6px;
+}
+.pf-ref {
+  font-size:11px; color:#7a5a30; font-weight:400;
+}
+
+/* connection */
+.connection-block {
+  background:rgba(100,70,10,.08);
+  border:1px solid rgba(180,140,60,.2);
+  border-radius:6px; padding:14px;
+  margin-bottom:16px;
+}
+.conn-label {
+  font-family:'Cinzel',serif;
+  font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color:#8a6020; margin-bottom:8px;
+}
+.conn-text {
+  font-size:13.5px; color:#2e2000; line-height:1.7;
+}
+
+/* done btn */
+.btn-done {
+  width:100%; padding:12px;
+  background:linear-gradient(135deg,#8b6010,#c9a84c,#a07828);
+  border:none; border-radius:6px;
+  font-family:'Cinzel',serif; font-size:12px; letter-spacing:1.5px;
+  color:#fff8e8; cursor:pointer;
+  box-shadow:0 3px 12px rgba(0,0,0,.3);
+  transition:opacity .2s, transform .1s;
+}
+.btn-done:hover { opacity:.9; transform:translateY(-1px); }
+.done-stamp {
+  text-align:center; font-family:'Cinzel',serif;
+  font-size:11px; letter-spacing:2px; color:#8a6020;
+  padding:4px 0;
+}
+
+/* bottom roller */
+.scroll-roller-bottom {
+  height:18px;
+  background:linear-gradient(180deg,#6b5010 0%,#a07828 40%,#c9a84c 60%,#8b6914 100%);
+  border-radius:0 0 10px 10px;
+  box-shadow:0 3px 8px rgba(0,0,0,.5), inset 0 -2px 3px rgba(255,255,255,.1);
+  position:relative; z-index:2;
+}
+.scroll-roller-bottom::before,.scroll-roller-bottom::after {
+  content:'';
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:22px; height:22px; border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#e8c060,#8b6010);
+  box-shadow:0 2px 6px rgba(0,0,0,.5);
+}
+.scroll-roller-bottom::before { left:-6px; }
+.scroll-roller-bottom::after  { right:-6px; }
+
+/* ── QUIZ ── */
+#quiz-section {
+  max-width:720px; margin:0 auto 60px; padding:0 16px;
+}
+.quiz-scroll {
+  background:linear-gradient(180deg,#f0e4b8,#e8d898);
+  border:3px solid #c9a060;
+  border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.2);
+  overflow:hidden;
+}
+.quiz-header {
+  background:linear-gradient(180deg,#8b6010,#c9a84c);
+  padding:16px 24px;
+  text-align:center;
+}
+.quiz-header h2 {
+  font-family:'Cinzel',serif; font-size:16px; letter-spacing:2px;
+  color:#fff8e0; text-shadow:0 1px 3px rgba(0,0,0,.4);
+}
+.quiz-body { padding:24px; }
+.quiz-prog-bar {
+  height:3px; background:rgba(160,120,40,.2); border-radius:99px;
+  overflow:hidden; margin-bottom:20px;
+}
+.quiz-prog-fill {
+  height:100%; border-radius:99px;
+  background:linear-gradient(90deg,#8b6010,#c9a84c);
+  transition:width .5s ease;
+}
+.quiz-q {
+  font-family:'IM Fell English',serif; font-size:18px;
+  color:#2e1e00; line-height:1.5; margin-bottom:20px;
+}
+.quiz-opts { display:flex; flex-direction:column; gap:10px; }
+.quiz-opt {
+  background:rgba(160,120,40,.08);
+  border:1px solid rgba(160,120,40,.3);
+  border-radius:6px; padding:12px 16px;
+  font-family:'IM Fell English',serif; font-size:15px;
+  color:#3a2800; cursor:pointer; text-align:left;
+  transition:all .2s;
+}
+.quiz-opt:hover:not(:disabled) {
+  background:rgba(160,120,40,.18);
+  border-color:#c9a060; transform:translateX(3px);
+}
+.quiz-opt.correct { background:rgba(40,120,60,.15); border-color:#4a9a5a; color:#1a4a20; }
+.quiz-opt.wrong   { background:rgba(160,40,40,.12);  border-color:#c05050; color:#5a1a1a; }
+.quiz-opt:disabled { cursor:default; transform:none; }
+.quiz-fb {
+  margin-top:14px; font-family:'IM Fell English',serif;
+  font-size:14px; line-height:1.6; color:#3a2800; min-height:20px;
+}
+.btn-next-q {
+  margin-top:16px; padding:11px 28px;
+  background:linear-gradient(135deg,#8b6010,#c9a84c);
+  border:none; border-radius:6px;
+  font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px;
+  color:#fff8e0; cursor:pointer; display:none;
+  box-shadow:0 3px 10px rgba(0,0,0,.3);
+  transition:opacity .2s;
+}
+.btn-next-q.show { display:inline-block; }
+.btn-next-q:hover { opacity:.85; }
+
+/* result */
+.quiz-result { text-align:center; padding:8px 0 16px; }
+.result-num {
+  font-family:'Cinzel',serif; font-size:64px; font-weight:700;
+  color:#8b6010; line-height:1;
+  text-shadow:0 2px 8px rgba(139,96,16,.3);
+}
+.result-sub { font-size:13px; color:#7a6030; letter-spacing:2px; margin:4px 0 20px; text-transform:uppercase; }
+.result-msg {
+  font-family:'IM Fell English',serif; font-style:italic;
+  font-size:18px; color:#2e1e00; line-height:1.6; margin-bottom:20px;
+  max-width:420px; margin-left:auto; margin-right:auto;
+}
+.btn-restart {
+  background:transparent; border:1px solid #c9a060;
+  border-radius:6px; padding:10px 24px;
+  font-family:'Cinzel',serif; font-size:11px; letter-spacing:2px;
+  color:#8b6010; cursor:pointer; transition:all .2s;
+}
+.btn-restart:hover { background:#c9a84c; color:#1a1208; }
+
+.quiz-locked {
+  text-align:center; padding:32px 20px;
+  font-family:'IM Fell English',serif; font-style:italic;
+  font-size:16px; color:#7a6030; line-height:1.7;
+}
+.quiz-locked .lock { font-size:32px; display:block; margin-bottom:12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="header-ornament">— ✦ —</span>
+  <h1>
+    <span>Uma Jornada pelos 39 Livros do Velho Testamento</span>
+    Encontrando Jesus no<br>Antigo Testamento
+  </h1>
+  <p>"Esquadrinhais as Escrituras... e são elas que testificam de mim." — João 5:39</p>
+  <div class="divider"></div>
+  <div class="prog-wrap">
+    <div class="prog-top"><span>Pergaminhos abertos</span><b id="prog-text">0 de 39</b></div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+</header>
+
+<div id="trail"></div>
+
+<div id="quiz-section">
+  <div class="section-label">Quiz Final</div>
+  <div class="quiz-scroll">
+    <div class="quiz-header"><h2>⚔ Teste do Escriba</h2></div>
+    <div class="quiz-body" id="quiz-body"></div>
+  </div>
+</div>
+
+<script>
+const BOOKS = [
+  { name:"Gênesis", tag:"Pentateuco",
+    context:"Após a serpente enganar Adão e Eva, o mundo entrou em ruptura com Deus. No entanto, ainda naquele momento sombrio, Deus não abandonou a humanidade — Ele fez uma promessa que mudaria tudo. É a chamada Protoevangelium: a primeira boa notícia.",
+    prophecy:{ v:"Porei inimizade entre ti e a mulher, e entre a tua semente e o seu filho; este te ferirá a cabeça, e tu lhe ferirás o calcanhar.", r:"Gênesis 3:15" },
+    fulfillment:{ v:"O Deus da paz em breve esmagará Satanás debaixo dos vossos pés.", r:"Romanos 16:20" },
+    connection:"Com a possível exceção de João 3:16, nenhum versículo da Bíblia é mais crucial sobre Jesus Cristo. A 'semente da mulher' que esmagaria a cabeça da serpente aponta diretamente para Jesus — nascido de mulher (virgem), que na cruz derrotou definitivamente o poder do diabo."
+  },
+  { name:"Êxodo", tag:"Pentateuco",
+    context:"No Egito, Deus enviou dez pragas sobre o Faraó. A última — a morte dos primogênitos — seria evitada por um sinal específico: o sangue de um cordeiro sem defeito pintado nas ombreiras das casas. Aquelas famílias seriam 'passadas por cima' — o Páscoa.",
+    prophecy:{ v:"O sangue vos servirá de sinal... verei o sangue e passarei por vós; e não haverá entre vós praga destruidora.", r:"Êxodo 12:13" },
+    fulfillment:{ v:"Eis o Cordeiro de Deus, que tira o pecado do mundo.", r:"João 1:29" },
+    connection:"O cordeiro pascal — sem osso quebrado, cujo sangue protegia da morte — é uma das mais poderosas imagens de Jesus no AT. Paulo afirma diretamente: 'Cristo, nossa Páscoa, foi sacrificado por nós' (1 Cor 5:7). O sangue não estava na porta por acidente."
+  },
+  { name:"Levítico", tag:"Pentateuco",
+    context:"O Dia da Expiação (Yom Kippur) era o momento mais solene do calendário israelita. O Sumo Sacerdote — e só ele — entrava uma vez por ano no Santo dos Santos para oferecer sangue de animais pelos pecados do povo. Era um ritual que precisava ser repetido ano após ano.",
+    prophecy:{ v:"O sumo sacerdote entra no lugar santíssimo com o sangue... para fazer expiação por si mesmo e pelo povo.", r:"Levítico 16:15" },
+    fulfillment:{ v:"Cristo entrou no verdadeiro tabernáculo... oferecendo a si mesmo como sacrifício perfeito e eterno.", r:"Hebreus 9:11-12" },
+    connection:"O livro de Hebreus usa exatamente Levítico para explicar Jesus: Ele é o Sumo Sacerdote superior que entrou no tabernáculo celestial — não com sangue de animais, mas com o Seu próprio. E diferente dos sacrifícios antigos, o Dele não precisa ser repetido: é eterno."
+  },
+  { name:"Números", tag:"Pentateuco",
+    context:"Os filhos de Israel estavam no deserto há anos e começaram a reclamar contra Deus e contra Moisés por falta de comida e água — apesar de toda a provisão divina. Como consequência, o Senhor enviou serpentes venenosas. Muitos morreram. O povo se arrependeu e clamou por socorro.",
+    prophecy:{ v:"Moisés fez uma serpente de bronze e a pôs sobre um poste; e quando alguma serpente mordia algum homem, este olhava para a serpente de bronze e vivia.", r:"Números 21:9" },
+    fulfillment:{ v:"Como Moisés levantou a serpente no deserto, assim importa que o Filho do Homem seja levantado, para que todo o que nele crê tenha a vida eterna.", r:"João 3:14-15" },
+    connection:"O próprio Jesus traçou essa conexão. Quem estava mordido de serpente e olhava para o bronze levantado — vivia. Quem está ferido pelo pecado e olha pela fé para Cristo levantado na cruz — recebe vida eterna. A cura não estava na serpente em si, mas no ato de fé de olhar."
+  },
+  { name:"Deuteronômio", tag:"Pentateuco",
+    context:"Moisés era o maior profeta que Israel conhecera — falava face a face com Deus. Antes de morrer, ele profetizou que Deus suscitaria outro profeta, da própria nação israelita, que continuaria essa linha de revelação divina. Era uma promessa que o povo guardou por séculos.",
+    prophecy:{ v:"O Senhor teu Deus te suscitará um profeta do meio de ti, dos teus irmãos, semelhante a mim; a ele ouvireis.", r:"Deuteronômio 18:15" },
+    fulfillment:{ v:"Este é verdadeiramente o profeta que devia vir ao mundo.", r:"João 6:14" },
+    connection:"Após a multiplicação dos pães, o povo imediatamente reconheceu Jesus como o profeta de Deuteronômio. Pedro também cita essa passagem em Atos 3:22-23 e aplica diretamente a Cristo. Jesus é o profeta final — não apenas transmite a palavra de Deus, mas É a Palavra de Deus encarnada."
+  },
+  { name:"Josué", tag:"Histórico",
+    context:"Josué estava se preparando para a batalha de Jericó quando teve um encontro inesperado: um homem de pé diante dele com uma espada desembainhada na mão. Josué perguntou: 'És tu dos nossos ou dos nossos inimigos?' A resposta mudou tudo.",
+    prophecy:{ v:"Sou o comandante do exército do Senhor... Tira as sandálias dos pés, porque o lugar onde estás é santo.", r:"Josué 5:14-15" },
+    fulfillment:{ v:"Josué se prostrou com o rosto em terra e o adorou.", r:"Josué 5:14" },
+    connection:"Este é um exemplo claro de cristofania — aparição pré-encarnada de Cristo no AT. Dois detalhes cruciais: o Comandante aceita adoração (apenas Deus pode ser adorado), e ordena tirar as sandálias — as mesmas palavras ditas a Moisés na sarça ardente (Ex 3:5). Josué estava diante de Deus."
+  },
+  { name:"Juízes", tag:"Histórico",
+    context:"O anjo do Senhor apareceu a Manoá e sua esposa estéril para anunciar o nascimento de Sansão. Após o encontro, Manoá ofereceu um cabrito a Deus. O visitante misterioso — que havia se recusado a revelar seu nome — fez algo extraordinário.",
+    prophecy:{ v:"Quando a chama subiu do altar, o anjo do Senhor subiu na chama do altar. Manoá disse à sua mulher: Certamente morreremos, porque vimos a Deus.", r:"Juízes 13:20-22" },
+    fulfillment:{ v:"Ninguém jamais viu a Deus; o Filho unigênito... ele o revelou.", r:"João 1:18" },
+    connection:"O anjo que ascende na chama do sacrifício e aceita adoração é mais uma cristofania. O espanto de Manoá — 'certamente morreremos porque vimos a Deus' — confirma quem era o visitante. Ele anuncia um nascimento sobrenatural, assim como o próprio Jesus seria anunciado séculos depois."
+  },
+  { name:"Rute", tag:"Histórico",
+    context:"Rute era uma mulher moabita — uma estrangeira, de um povo historicamente inimigo de Israel. Depois que seu marido israelita morreu, ela poderia ter voltado para seu povo. Mas escolheu ficar com sua sogra Noemi e seguir o Deus de Israel. Uma escolha que custou tudo.",
+    prophecy:{ v:"Onde tu morreres, morrerei eu; e ali serei sepultada. Assim me faça o Senhor, e outro tanto, se não for só a morte que nos separar.", r:"Rute 1:17" },
+    fulfillment:{ v:"Que em Cristo Jesus os gentios são co-herdeiros, membros do mesmo corpo e participantes da promessa.", r:"Efésios 3:6" },
+    connection:"Rute, a estrangeira que abandona tudo para abraçar um novo povo e uma nova fé, prefigura Jesus — que deixou o céu e entrou num mundo estrangeiro para oferecer graça e adoção a todos os perdidos. Assim como Rute encontrou aceitação, pertencimento e nova identidade em Israel, todos podem encontrar isso em Cristo."
+  },
+  { name:"1 Samuel", tag:"Histórico",
+    context:"Saul, o primeiro rei de Israel, havia desobedecido a Deus repetidamente. O Senhor então enviou o profeta Samuel a Belém — a uma família comum, a casa de Jessé — para ungir o próximo rei. Não seria nenhum dos filhos mais imponentes, mas o mais jovem: Davi, o pastor.",
+    prophecy:{ v:"O Senhor olha para o coração... o Senhor procurou para si um homem segundo o seu coração.", r:"1 Samuel 13:14; 16:7" },
+    fulfillment:{ v:"Este é o meu Filho amado, em quem me comprazo.", r:"Mateus 3:17" },
+    connection:"Davi — o pastor humilde, ungido e rejeitado antes de ser exaltado — é uma das mais ricas prefigurações de Jesus. O pai declarando amor ao filho amado ecoa tanto a unção de Davi quanto o batismo de Jesus. Cristo é o verdadeiro Filho segundo o coração de Deus."
+  },
+  { name:"2 Samuel", tag:"Histórico",
+    context:"Davi havia conquistado Jerusalém e querido construir um templo para Deus. Mas o Senhor inverteu a proposta: não seria Davi quem construiria uma casa para Deus, mas Deus quem construiria uma 'casa' — uma dinastia — para Davi. Essa é a Aliança Davídica, o coração do AT.",
+    prophecy:{ v:"A tua casa e o teu reino serão estabelecidos para sempre diante de ti; o teu trono será firme para sempre.", r:"2 Samuel 7:16" },
+    fulfillment:{ v:"Reinará sobre a casa de Jacó para sempre; e do seu reino não haverá fim.", r:"Lucas 1:33" },
+    connection:"Gabriel cita quase palavra por palavra a promessa de 2 Samuel ao anunciar Jesus a Maria. O reino eterno prometido a Davi não pôde ser cumprido por nenhum de seus descendentes humanos — todos morreram. Só Jesus, o Filho de Davi e Filho de Deus, cumpre esta aliança literalmente."
+  },
+  { name:"1 Reis", tag:"Histórico",
+    context:"Salomão construiu o templo em Jerusalém — a mais gloriosa estrutura do mundo antigo. Revestido de ouro, com querubins esculpidos, cheio da presença de Deus. Era o ponto de encontro entre o céu e a terra. Mas havia uma tensão: podia Deus realmente habitar num edifício feito por mãos humanas?",
+    prophecy:{ v:"Destruí este templo, e em três dias o levantarei.", r:"João 2:19" },
+    fulfillment:{ v:"Mas ele falava do templo do seu corpo. Quando ressuscitou dos mortos, os seus discípulos se lembraram.", r:"João 2:21-22" },
+    connection:"O esplendor do templo de Salomão sempre foi uma sombra do verdadeiro. Jesus apontou para seu próprio corpo como o templo definitivo. Destruído na crucificação, levantado na ressurreição em três dias — exatamente como prometeu. O templo de pedra era apenas o esboço."
+  },
+  { name:"2 Reis", tag:"Histórico",
+    context:"O registro de 2 Reis é sombrio: rei após rei de Israel e Judá falhou em guardar a aliança de Deus. Mesmo os bons reis tinham falhas profundas. O resultado foi o exílio — primeiro o norte para a Assíria, depois o sul para a Babilônia. A Lei não conseguiu produzir um povo fiel.",
+    prophecy:{ v:"Não houve rei como ele... que se convertesse ao Senhor de todo o seu coração. Mas mesmo assim, o Senhor não desistiu da ira.", r:"2 Reis 23:25-26 (paráfrase)" },
+    fulfillment:{ v:"Não vim ab-rogar a lei, mas cumpri-la.", r:"Mateus 5:17" },
+    connection:"A série interminável de reis falhos demonstra uma verdade: nenhum ser humano consegue cumprir a Lei perfeitamente. Isso evidencia a necessidade de um Rei diferente — Jesus, que não apenas ensinou a Lei, mas foi o único na história que a cumpriu em sua totalidade, do início ao fim."
+  },
+  { name:"1 Crônicas", tag:"Histórico",
+    context:"Crônicas foi escrito para o povo que voltou do exílio babilônico. Eles precisavam entender sua identidade. O livro começa com longas genealogias — não como burocracia, mas como teologia: Deus não esqueceu sua promessa a Davi. A linha real estava preservada.",
+    prophecy:{ v:"Estabelecerei o seu trono para sempre... serei pai para ele, e ele será filho para mim.", r:"1 Crônicas 17:12-13" },
+    fulfillment:{ v:"Jesus Cristo, filho de Davi... declarado Filho de Deus com poder pela ressurreição.", r:"Romanos 1:3-4" },
+    connection:"As genealogias de Crônicas traçam meticulosamente a linha real que culmina em Jesus. Paulo em Romanos une os dois fios: filho de Davi segundo a carne, Filho de Deus segundo o Espírito. A promessa de 1 Crônicas encontra seu cumprimento único e definitivo na pessoa de Cristo."
+  },
+  { name:"2 Crônicas", tag:"Histórico",
+    context:"No início de 2 Crônicas, Salomão dedica o templo recém-construído. Num momento dramático, a glória de Deus — a Shekiná, a nuvem luminosa — desce e preenche o templo tão intensamente que os sacerdotes não conseguem nem entrar. Era a presença de Deus habitando entre os homens.",
+    prophecy:{ v:"Agora escolhi e santifiquei esta casa para que o meu nome nela esteja para sempre; os meus olhos e o meu coração estarão ali perpetuamente.", r:"2 Crônicas 7:16" },
+    fulfillment:{ v:"Cristo é ministro do santuário e do verdadeiro tabernáculo, o qual o Senhor armou, e não o homem.", r:"Hebreus 8:2" },
+    connection:"A glória enchendo o templo é a maior cena de presença divina no AT. João 1:14 usa a mesma linguagem: 'A Palavra se fez carne e habitou (tabernaculou) entre nós, e vimos a sua glória.' Jesus é o templo vivo — onde Deus habita plenamente em forma humana."
+  },
+  { name:"Esdras", tag:"Histórico",
+    context:"Os israelitas viviam sob o domínio persa quando o rei Ciro emitiu um decreto surpreendente: o povo poderia voltar para Jerusalém e reconstruir o templo que os babilônios haviam destruído. Era um retorno impossível que se tornou realidade — uma ressurreição nacional.",
+    prophecy:{ v:"Reconstruam o templo do Senhor, Deus de Israel — ele é o Deus que está em Jerusalém.", r:"Esdras 1:3" },
+    fulfillment:{ v:"Destruí este templo, e em três dias o levantarei... falava do templo do seu corpo.", r:"João 2:19,21" },
+    connection:"A reconstrução do templo após sua destruição é uma imagem profética da ressurreição de Jesus. O templo destruído pelos babilônios foi reedificado em anos. O templo do corpo de Cristo foi 'destruído' na crucificação e reedificado em três dias — cumprimento infinitamente maior que o símbolo."
+  },
+  { name:"Neemias", tag:"Histórico",
+    context:"Neemias era copeiro do rei persa quando soube que Jerusalém estava em ruínas — suas muralhas derrubadas, suas portas queimadas. Movido por compaixão, ele largou tudo, voltou para sua terra e liderou a reconstrução das muralhas em apenas 52 dias. Depois, junto com Esdras, trouxe o povo de volta à Palavra de Deus.",
+    prophecy:{ v:"Neemias e Esdras promoveram reformas para trazer o povo de volta à observância da lei de Deus, corrigindo práticas erradas de adoração e de vida social.", r:"Neemias 8:8; 13:30 (paráfrase)" },
+    fulfillment:{ v:"Eu vim para que tenham vida e a tenham em abundância.", r:"João 10:10" },
+    connection:"Neemias é o reformador e restaurador — aquele que reconstrói o que estava destruído e traz o povo de volta a Deus. Cristo é o Reformador definitivo: não apenas corrige práticas externas, mas oferece um novo coração (Ez 36:26), um novo caminho de vida e uma adoração em espírito e verdade."
+  },
+  { name:"Ester", tag:"Histórico",
+    context:"Uma jovem judia órfã se torna rainha do Império Persa. Então um decreto é emitido para exterminar todos os judeus do império. Ester estava em posição de tentar intervir — mas aproximar-se do rei sem ser convocada era punível de morte. Seu tio Mordecai a confrontou com palavras que ecoam até hoje.",
+    prophecy:{ v:"Quem sabe se não foi para um momento como este que chegaste à posição de rainha?", r:"Ester 4:14" },
+    fulfillment:{ v:"Para isto vim a este momento... o Pai, que me enviou, ele mesmo me ordena o que dizer.", r:"João 12:27,49" },
+    connection:"As palavras de Mordecai a Ester sobre seu papel no plano de Deus são uma prefiguração do papel supremo de Jesus. Assim como Ester foi 'colocada em posição' para um momento crítico de salvação, Jesus veio exatamente no momento certo (Gl 4:4) para resgatar a humanidade de uma sentença de morte."
+  },
+  { name:"Jó", tag:"Poético",
+    context:"Jó perdeu tudo: filhos, riquezas, saúde. Seus amigos argumentaram que ele devia estar sofrendo por pecado. Mas no meio da maior angústia, Jó fez uma declaração de fé que deixou os leitores espantados por milênios — uma certeza que ultrapassava sua compreensão do sofrimento presente.",
+    prophecy:{ v:"Eu sei que o meu Redentor vive, e por fim se levantará sobre a terra... em minha carne verei a Deus; eu mesmo o verei, por mim mesmo, e os meus olhos o verão.", r:"Jó 19:25-27" },
+    fulfillment:{ v:"Eu sou a ressurreição e a vida; quem crê em mim, ainda que esteja morto, viverá.", r:"João 11:25" },
+    connection:"Este é provavelmente o versículo mais profético de Jó. No auge do sofrimento, sem entender o porquê, Jó declara fé num Redentor vivo que se levantará — e que ele, em sua própria carne ressuscitada, o verá. É uma antecipação poderosa da ressurreição de Cristo e da ressurreição dos crentes."
+  },
+  { name:"Salmos", tag:"Poético",
+    context:"O Salmo 22 começa com palavras de abandono total e descreve um sofrimento físico e emocional específico com detalhes que perturbam: ossos deslocados, coração derretido como cera, sede extrema, mãos e pés perfurados, roupas divididas por sorteio. Davi escreveu isso aproximadamente 1000 anos antes de Cristo.",
+    prophecy:{ v:"Meu Deus, meu Deus, por que me abandonaste?... Perfuraram as minhas mãos e os meus pés... Repartem entre si as minhas vestes e sobre a minha roupa lançam sortes.", r:"Salmo 22:1,16,18" },
+    fulfillment:{ v:"Às três horas Jesus exclamou em voz alta: Eloí, Eloí, lamá sabactâni? — que quer dizer: Deus meu, Deus meu, por que me abandonaste?", r:"Marcos 15:34" },
+    connection:"O Salmo 22 é chamado de 'o salmo da crucificação'. É incrível: a crucificação ainda não existia como método de execução quando Davi escreveu. Ainda assim, descreveu perfuração de mãos e pés, divisão de roupas por sorteio, deslocamento de ossos. Jesus citou a abertura deste salmo na cruz — confirmando que era sobre Ele."
+  },
+  { name:"Provérbios", tag:"Poético",
+    context:"Agur, autor de Provérbios 30, começa confessando sua própria ignorância diante de Deus. Então faz uma série de perguntas retóricas sobre quem poderia realmente conhecer Deus — perguntas que soam como um desafio, mas na verdade apontam para algo além da compreensão humana.",
+    prophecy:{ v:"Quem subiu aos céus e desceu? Quem ajuntou o vento nas suas mãos?... Qual é o seu nome, e qual o nome do seu filho, se é que o sabes?", r:"Provérbios 30:4" },
+    fulfillment:{ v:"Ninguém subiu ao céu senão o que desceu do céu, o Filho do Homem.", r:"João 3:13" },
+    connection:"Agur faz perguntas aparentemente impossíveis: quem desceu e subiu ao céu? Qual o nome do Filho? Séculos depois, Jesus responde diretamente: Ele é quem desceu do céu e subirá de volta. O nome do Filho: Jesus. A pergunta de Provérbios 30 encontra sua única resposta possível na pessoa de Cristo."
+  },
+  { name:"Eclesiastes", tag:"Poético",
+    context:"Eclesiastes é o livro mais honesto da Bíblia sobre a condição humana. O Pregador — provavelmente Salomão — testou tudo: sabedoria, prazer, trabalho, riqueza. Conclusão: 'vaidade de vaidades, tudo é vaidade'. Sem Deus, nada tem sentido permanente debaixo do sol.",
+    prophecy:{ v:"Vaidade de vaidades! Tudo é vaidade... Toda a fadiga do homem é para a sua boca, e contudo a sua alma não se sacia.", r:"Eclesiastes 1:2; 6:7" },
+    fulfillment:{ v:"Eu vim para que tenham vida e a tenham em abundância.", r:"João 10:10" },
+    connection:"Eclesiastes faz o diagnóstico; Jesus traz a cura. O livro é uma preparação: mostra que vida sem Deus é vazia, por mais que se conquiste. A busca humana por significado, satisfação e permanência — descrita tão realisticamente em Eclesiastes — só encontra resposta em Cristo, que oferece vida com propósito eterno."
+  },
+  { name:"Cantares", tag:"Poético",
+    context:"Cântico de Salomão é um livro de amor — intenso, poético, às vezes surpreendente para um texto sagrado. Um rei apaixonado por uma jovem simples chamada Sulamita. Apesar da diferença de status, ele a busca, a corteja, a declara amada. E no final, uma das afirmações mais profundas da Escritura.",
+    prophecy:{ v:"Forte como a morte é o amor; duro como o inferno é o ciúme; as suas brasas são brasas de fogo, uma fortíssima chama.", r:"Cantares 8:6" },
+    fulfillment:{ v:"Ninguém tem maior amor do que este: dar a vida pelos seus amigos.", r:"João 15:13" },
+    connection:"A tradição judaica sempre leu Cantares como alegoria do amor de Deus por Israel. O NT a relê como imagem do amor de Cristo pela Igreja. O rei que ama a Sulamita apesar da diferença de status aponta para Jesus — o Rei dos reis que amou tanto a sua 'noiva' (a Igreja) que o seu amor provou ser mais forte que a própria morte."
+  },
+  { name:"Isaías", tag:"Profético",
+    context:"Isaías é chamado de 'o evangelista do Antigo Testamento' — e não sem razão. Escrevendo por volta de 700 a.C., ele profetizou sobre o Messias com uma especificidade que até os próprios rabinos reconheciam como excepcional. Nascimento, ministério, sofrimento, morte e ressurreição — tudo está ali.",
+    prophecy:{ v:"Uma virgem conceberá e dará à luz um filho, e chamará o seu nome Emanuel... Ele foi ferido pelas nossas transgressões, moído pelas nossas iniquidades... e com as suas pisaduras fomos sarados.", r:"Isaías 7:14; 53:5" },
+    fulfillment:{ v:"Tudo isto aconteceu para que se cumprisse o que foi dito pelo Senhor pelo profeta.", r:"Mateus 1:22" },
+    connection:"Isaías 53 — o capítulo do 'Servo Sofredor' — descreve com tal precisão a crucificação que alguns chegaram a questionar se foi escrito depois. Mas os Rolos do Mar Morto confirmam que é anterior a Cristo. Nascimento virginal, nome Emanuel, milagres de cura, sofrimento vicário, ressurreição: Isaías pintou o retrato de Jesus 700 anos antes."
+  },
+  { name:"Jeremias", tag:"Profético",
+    context:"Jeremias profetizou durante os anos mais sombrios de Judá — a nação caminhava para o exílio. Mas no meio das profecias de julgamento, ele anunciou algo que ninguém esperava: Deus faria uma Nova Aliança — diferente da aliança do Sinai que o povo sempre quebrava.",
+    prophecy:{ v:"Farei surgir para Davi um Ramo Justo; este reinará como Rei sábio, e exercerá o juízo e a justiça na terra.", r:"Jeremias 23:5" },
+    fulfillment:{ v:"Jesus Cristo, filho de Davi, filho de Abraão.", r:"Mateus 1:1" },
+    connection:"O 'Ramo Justo' de Jeremias é um título messiânico claro. A linhagem davídica parecia cortada com o exílio — mas Jeremias anunciou que de alguma forma ela produziria um Rei diferente de todos os outros: sábio, justo, e cujo nome seria 'O Senhor é a nossa Justiça'. Jesus é esse Ramo."
+  },
+  { name:"Lamentações", tag:"Profético",
+    context:"Lamentações foi escrito por Jeremias logo após a destruição de Jerusalém pelos babilônios. É um choro — literalmente. Cada capítulo é um poema de acrostico hebraico. A cidade está em ruínas, o povo em exílio, o templo queimado. O livro não tem final feliz, mas tem uma virada central.",
+    prophecy:{ v:"Olhai e vede se há alguma dor semelhante à minha dor... o Senhor afligiu-me no dia da sua ira.", r:"Lamentações 1:12" },
+    fulfillment:{ v:"Cristo experimentou o sofrimento e a rejeição por nossos pecados... pelas suas feridas fostes sarados.", r:"1 Pedro 2:24" },
+    connection:"As palavras de Lamentações 1:12 — 'Vede se há dor como a minha dor' — foram usadas pela tradição cristã como voz de Cristo na cruz. O sofrimento de Jerusalém prefigura o sofrimento do Messias que carregaria a aflição de toda a humanidade. Mas assim como Lamentações tem sua virada ('Novas são as misericórdias de Deus'), Cristo transforma a morte em ressurreição."
+  },
+  { name:"Ezequiel", tag:"Profético",
+    context:"Ezequiel profetizou durante o exílio na Babilônia. Em meio a visões extraordinárias (a roda de fogo, o vale dos ossos secos), ele pronunciou uma das promessas mais diretas sobre o Messias: Deus enviaria um único pastor para cuidar do rebanho que os líderes de Israel haviam tratado com negligência e exploração.",
+    prophecy:{ v:"Levantarei sobre elas um só pastor, meu servo Davi, e ele as apascentará... eu, o Senhor, serei o seu Deus, e meu servo Davi será príncipe no meio delas.", r:"Ezequiel 34:23-24" },
+    fulfillment:{ v:"Eu sou o bom pastor; o bom pastor dá a sua vida pelas ovelhas.", r:"João 10:11" },
+    connection:"Jesus se identifica como o Bom Pastor de Ezequiel 34. A profecia fala de 'meu servo Davi' — não o Davi histórico já morto, mas o Messias da linhagem de Davi. Jesus cumpre cada detalhe: cuida das ovelhas, as conhece pelo nome, as busca quando perdidas, e dá a própria vida por elas."
+  },
+  { name:"Daniel", tag:"Profético",
+    context:"Daniel recebeu visões do fim dos tempos. Na visão mais marcante do capítulo 7, ele viu os reinos humanos representados como bestas violentas. Mas então apareceu uma figura completamente diferente — não uma besta, mas um ser humano — vindo nas nuvens do céu diante do Ancião de Dias.",
+    prophecy:{ v:"Vi nas visões da noite, e eis que vinha com as nuvens do céu um como o Filho do Homem... e foi-lhe dado domínio, glória e um reino, para que os povos, nações e línguas o servissem; o seu domínio é domínio eterno.", r:"Daniel 7:13-14" },
+    fulfillment:{ v:"Vereis o Filho do Homem assentado à direita do Poder e vindo sobre as nuvens do céu.", r:"Mateus 26:64" },
+    connection:"'Filho do Homem' foi o título favorito de Jesus — ele o usou aproximadamente 80 vezes nos Evangelhos. Quando Jesus usou esse título diante do sumo sacerdote, foi acusado de blasfêmia — porque todos entenderam a referência a Daniel 7 e que Ele estava se identificando com aquele ser que recebe adoração universal e reino eterno."
+  },
+  { name:"Oséias", tag:"Profético",
+    context:"Deus ordenou algo incomum a Oséias: casar-se com uma prostituta chamada Gômer, que seria infiel ao marido. Não era uma metáfora — era uma história real que servia de parábola viva. Depois de Gômer o abandonar, Deus ordenou que Oséias a comprasse de volta — mesmo depois de tudo.",
+    prophecy:{ v:"Então me disse o Senhor: Vai de novo, e ama uma mulher amada de algum amigo, e adúltera, como o Senhor ama os filhos de Israel.", r:"Oséias 3:1" },
+    fulfillment:{ v:"Cristo amou a igreja e a si mesmo se entregou por ela, para a santificar.", r:"Efésios 5:25-26" },
+    connection:"A história de Oséias e Gômer é uma das mais poderosas prefigurações do Evangelho no AT. Assim como Oséias compra de volta sua esposa infiel — não porque ela merecia, mas por amor redentor — Cristo resgata e redime sua noiva (a Igreja) mesmo em plena infidelidade. Isso é graça."
+  },
+  { name:"Joel", tag:"Profético",
+    context:"Joel descreveu uma praga de gafanhotos devastadora como prelúdio do 'Dia do Senhor' — um tempo de julgamento. Mas no centro da profecia havia uma promessa extraordinária para além do julgamento: um derramamento do Espírito de Deus que iria além dos profetas e sacerdotes.",
+    prophecy:{ v:"Depois derramarei o meu Espírito sobre toda a carne; vossos filhos e vossas filhas profetizarão... e até sobre os servos e sobre as servas derramarei o meu Espírito.", r:"Joel 2:28-29" },
+    fulfillment:{ v:"Mas isso é o que foi dito pelo profeta Joel... e todos ficaram cheios do Espírito Santo.", r:"Atos 2:16,4" },
+    connection:"No dia de Pentecostes, Pedro se levanta e diz: 'Isso é o que foi dito pelo profeta Joel.' O derramamento do Espírito prometido por Joel — sobre toda carne, homens e mulheres, livres e escravos — foi inaugurado por Jesus após sua ressurreição e ascensão. Pentecostes é cumprimento direto de Joel."
+  },
+  { name:"Amós", tag:"Profético",
+    context:"Amós era pastor de Tecoa quando foi chamado por Deus para profetizar ao reino do Norte. Sua mensagem era dura: Israel havia se afastado da justiça social e da fidelidade a Deus. O julgamento viria. Mas no final, Amós profetizou restauração — especificamente da linhagem de Davi.",
+    prophecy:{ v:"Naquele dia levantarei o tabernáculo caído de Davi, e cercarei as suas brechas, e levantarei as suas ruínas, e o edificarei como nos dias antigos.", r:"Amós 9:11" },
+    fulfillment:{ v:"Simão narrou como Deus visitou os gentios... isso está em acordo com as palavras dos profetas, como está escrito: Depois disto voltarei e reedificarei o tabernáculo caído de Davi.", r:"Atos 15:14-16" },
+    connection:"No Concílio de Jerusalém (Atos 15), Tiago cita exatamente Amós 9:11 para defender que a inclusão dos gentios no povo de Deus era prevista nas Escrituras. A 'reconstrução do tabernáculo de Davi' é Jesus — pela ressurreição e pela missão aos gentios que Ele inaugurou."
+  },
+  { name:"Obadias", tag:"Profético",
+    context:"Obadias é o menor livro do AT — apenas 21 versículos. É uma profecia contra Edom, nação descendente de Esaú que celebrou a queda de Jerusalém e colaborou com seus inimigos. Mas além do julgamento de Edom, o livro termina com uma visão do reinado final de Deus.",
+    prophecy:{ v:"O reino será do Senhor.", r:"Obadias 1:21" },
+    fulfillment:{ v:"O reino do mundo se tornou o reino do nosso Senhor e do seu Cristo, e ele reinará pelos séculos dos séculos.", r:"Apocalipse 11:15" },
+    connection:"A última frase de Obadias — 'O reino será do Senhor' — é uma das declarações mais concisas e poderosas do AT. Ecoa diretamente em Apocalipse 11:15. O julgamento das nações e o estabelecimento do reinado de Deus têm seu cumprimento definitivo em Cristo — o Rei que virá para reinar."
+  },
+  { name:"Jonas", tag:"Profético",
+    context:"Jonas foi enviado a Nínive mas fugiu na direção oposta. Uma tempestade, o lançamento ao mar, e então um grande peixe engoliu o profeta. Três dias e três noites nas profundezas. Depois — liberdade. Jonas foi a Nínive, pregou, e a cidade inteira se arrependeu. Mas a história ficaria famosa por outro motivo.",
+    prophecy:{ v:"Jonas esteve no ventre do peixe três dias e três noites.", r:"Jonas 1:17" },
+    fulfillment:{ v:"Assim como Jonas esteve três dias e três noites no ventre do grande peixe, assim também o Filho do Homem estará três dias e três noites no coração da terra.", r:"Mateus 12:40" },
+    connection:"O próprio Jesus citou Jonas como sinal profético de sua morte e ressurreição. As autoridades religiosas pediam um sinal; Jesus disse que só receberiam 'o sinal de Jonas'. Três dias nas profundezas — depois vida. A experiência de Jonas no peixe era um ensaio para a sepultura e ressurreição de Cristo."
+  },
+  { name:"Miquéias", tag:"Profético",
+    context:"Miquéias era contemporâneo de Isaías e profetizou durante o período de crise assíria. Enquanto as grandes cidades tremiam, ele voltou seus olhos para uma cidade pequena e aparentemente irrelevante no contexto político. E fez uma das profecias mais específicas do AT.",
+    prophecy:{ v:"E tu, Belém Efrata, posto que pequena entre os milhares de Judá, de ti me sairá o que há de reinar em Israel; e cujas saídas são desde os tempos antigos, desde os dias da eternidade.", r:"Miquéias 5:2" },
+    fulfillment:{ v:"Jesus nasceu em Belém da Judeia... então Herodes chamou secretamente os magos... e lhes perguntou onde havia de nascer o Cristo. E eles lhe disseram: Em Belém da Judeia, pois assim foi escrito pelo profeta.", r:"Mateus 2:1,4-5" },
+    connection:"Quando Herodes perguntou aos escribas onde nasceria o Messias, eles citaram imediatamente Miquéias 5:2. A profecia era conhecida. Belém — cidade de Davi — seria o berço do descendente eterno de Davi. Séculos depois, um censo romano levou José e Maria exatamente para aquela cidade, no momento exato."
+  },
+  { name:"Naum", tag:"Profético",
+    context:"Naum profetizou a queda de Nínive — a capital da Assíria, o império mais brutal do mundo antigo. Mas antes do julgamento, o livro abre com uma das mais belas descrições do caráter de Deus no AT: sua ira contra a maldade e sua bondade para com os que confiam nele.",
+    prophecy:{ v:"O Senhor é bom, uma fortaleza no dia da angústia; e conhece os que confiam nele.", r:"Naum 1:7" },
+    fulfillment:{ v:"Jesus julgará as nações com justiça, mas é o abrigo dos que vêm a ele.", r:"João 5:22; Mateus 11:28" },
+    connection:"Naum revela a dupla natureza de Deus que encontra seu ápice em Cristo: julgamento perfeito sobre a maldade, e bondade perfeita para os que confiam nele. Na cruz, as duas dimensões se encontram: o julgamento que o pecado merecia caiu sobre Jesus; a bondade que não merecemos é oferecida a nós."
+  },
+  { name:"Habacuque", tag:"Profético",
+    context:"Habacuque é único: é um profeta que debate com Deus. Ele questiona por que Deus permite a injustiça em Israel — e então fica ainda mais perplexo quando Deus diz que usará os babilônios (ainda mais ímpios) como instrumento de julgamento. A resposta de Deus é simples, mas transforma tudo.",
+    prophecy:{ v:"Eis que a alma do homem que não é reto se ensoberbece; mas o justo viverá pela sua fé.", r:"Habacuque 2:4" },
+    fulfillment:{ v:"Nele a justiça de Deus se revela, de fé em fé, como está escrito: O justo viverá pela fé.", r:"Romanos 1:17" },
+    connection:"Este versículo de Habacuque é citado três vezes no NT (Rm 1:17, Gl 3:11, Hb 10:38) — provavelmente o versículo do AT mais central para a teologia cristã. Foi também o versículo que Martinho Lutero leu e que desencadeou a Reforma Protestante. A justificação pela fé — o coração do Evangelho — está em Habacuque."
+  },
+  { name:"Sofonias", tag:"Profético",
+    context:"Sofonias profetizou durante o reinado de Josias, antes das grandes reformas. O livro descreve o Dia do Senhor como julgamento sobre todas as nações — incluindo Judá. Mas no final surge um texto de alegria e restauração que é uma das passagens mais emocionantes do AT.",
+    prophecy:{ v:"O Senhor teu Deus está no meio de ti como herói Salvador; ele se alegrará em ti com prazer, se aquietará no seu amor, e se regozijará sobre ti com cânticos.", r:"Sofonias 3:17" },
+    fulfillment:{ v:"O Filho do Homem veio buscar e salvar o que estava perdido.", r:"Lucas 19:10" },
+    connection:"Sofonias 3:17 pinta uma imagem surpreendente: Deus no meio do povo, não como juiz severo, mas como herói salvador que se alegra com cânticos. João 1:14 diz que o Verbo 'habitou entre nós'. Jesus é exatamente esse Deus no meio do povo — Emanuel, o herói Salvador que veio buscar os perdidos com alegria."
+  },
+  { name:"Ageu", tag:"Profético",
+    context:"O povo voltou do exílio e recomeçou a reconstrução do templo, mas parou por causa de oposição e desânimo. O novo templo estava longe do esplendor do templo de Salomão. Os anciãos choravam de decepção. Ageu então trouxe uma palavra de encorajamento com uma promessa extraordinária.",
+    prophecy:{ v:"A glória desta última casa será maior do que a da primeira, diz o Senhor dos Exércitos; e neste lugar darei paz.", r:"Ageu 2:9" },
+    fulfillment:{ v:"E vimos a sua glória, glória como do unigênito do Pai, cheio de graça e de verdade.", r:"João 1:14" },
+    connection:"Como poderia o segundo templo — menor e menos glorioso — ter glória maior que o de Salomão? A resposta: porque Jesus entrou nele. A glória do segundo templo não estava em sua arquitetura, mas em quem o visitou. Quando Jesus ensinou ali, curou ali, expulsou os vendilhões — a presença de Deus em pessoa cumpriu Ageu 2:9."
+  },
+  { name:"Zacarias", tag:"Profético",
+    context:"Zacarias é o livro mais messiânico dos profetas menores — cheio de visões simbólicas e profecias específicas sobre o Messias. Uma das mais notáveis descreve a entrada real do Rei em Jerusalém, com detalhes que pareciam improvável para um soberano do mundo antigo.",
+    prophecy:{ v:"Alegra-te muito, ó filha de Sião; exulta, ó filha de Jerusalém; eis que o teu Rei virá a ti, justo e Salvador, humilde, montado num jumento.", r:"Zacarias 9:9" },
+    fulfillment:{ v:"Isso aconteceu para que se cumprisse o que foi dito pelo profeta: Dizei à filha de Sião: Eis que o teu Rei vem a ti, humilde, montado num jumento.", r:"Mateus 21:4-5" },
+    connection:"Mateus cita Zacarias 9:9 explicitamente na entrada triunfal de Jesus em Jerusalém. Um rei conquistador chegaria a cavalo — sinal de poder militar. Mas o Rei Messias de Zacarias chega num jumento — símbolo de paz, não de guerra. Jesus escolheu deliberadamente cumprir essa profecia, declarando publicamente quem Ele era."
+  },
+  { name:"Malaquias", tag:"Profético",
+    context:"Malaquias é o último livro do AT — e termina com uma promessa e um silêncio. A promessa: Deus enviaria um mensageiro antes do Dia do Senhor. Depois disso, 400 anos de silêncio profético em Israel. Até que no deserto da Judeia, um homem começou a pregar.",
+    prophecy:{ v:"Eis que envio o meu mensageiro que preparará o caminho diante de mim; e o Senhor a quem vós buscais entrará de repente no seu templo.", r:"Malaquias 3:1" },
+    fulfillment:{ v:"Este é aquele de quem Isaías falou: Voz do que clama no deserto: Preparai o caminho do Senhor.", r:"Mateus 3:3" },
+    connection:"O último profeta do AT anuncia um mensageiro que preparará o caminho para o Senhor. João Batista é explicitamente identificado como esse mensageiro pelos quatro Evangelhos. A história do AT termina na expectativa — e o NT abre com o cumprimento. O silêncio de 400 anos é quebrado com: 'Eis o Cordeiro de Deus.'"
+  }
+];
+
+const QUIZ = [
+  { q:"Qual livro contém a primeira promessa messiânica da Bíblia — o 'Protoevangelium' — onde Deus promete que um filho da mulher esmagaria Satanás?", opts:["Êxodo","Gênesis","Isaías","Deuteronômio"], ans:1,
+    exp:"Gênesis 3:15 é o Protoevangelium — a primeira boa notícia. A 'semente da mulher' que esmagaria a cabeça da serpente aponta para Jesus na cruz." },
+  { q:"No livro de Números, qual objeto levantado no deserto Jesus usou para explicar sua própria crucificação em João 3:14?", opts:["A Arca da Aliança","O pão do deserto","A serpente de bronze","O tabernáculo"], ans:2,
+    exp:"Jesus disse: 'Assim como Moisés levantou a serpente no deserto, assim o Filho do Homem deve ser levantado.' Quem olhava para a serpente de bronze — vivia." },
+  { q:"O Salmo 22 é chamado de 'o salmo da crucificação'. Qual dessas imagens NÃO está nele?", opts:["Perfuração de mãos e pés","Divisão de vestes por sorteio","Uma virgem conceberá","'Meu Deus, por que me abandonaste?'"], ans:2,
+    exp:"'Uma virgem conceberá' está em Isaías 7:14, não no Salmo 22. Os outros três detalhes estão no Salmo 22 e foram literalmente cumpridos na crucificação." },
+  { q:"Qual profeta nomeou Belém como cidade de nascimento do Messias — com precisão suficiente para que os escribas de Herodes soubessem responder imediatamente?", opts:["Isaías","Jeremias","Miquéias","Zacarias"], ans:2,
+    exp:"Miquéias 5:2 é citado diretamente em Mateus 2:5-6. Quando Herodes perguntou onde nasceria o Cristo, os sacerdotes responderam imediatamente com Miquéias." },
+  { q:"A experiência de Jonas no ventre do peixe por 3 dias foi usada pelo próprio Jesus como prefiguração de qual evento?", opts:["O batismo de Jesus","A transfiguração no monte","A ressurreição após três dias","O jejum de 40 dias no deserto"], ans:2,
+    exp:"'Assim como Jonas esteve 3 dias no ventre do peixe, o Filho do Homem estará 3 dias no coração da terra.' (Mateus 12:40) Jesus mesmo traçou essa conexão." },
+  { q:"Qual versículo de Habacuque foi citado 3 vezes no NT e inspirou a teologia da Reforma Protestante?", opts:["Deus é fortaleza no dia da angústia","O justo viverá pela sua fé","O reino será do Senhor","Darei paz neste lugar"], ans:1,
+    exp:"Habacuque 2:4 é citado em Romanos 1:17, Gálatas 3:11 e Hebreus 10:38. Foi também o versículo que iluminou Martinho Lutero sobre a justificação pela fé." },
+  { q:"Em Zacarias, como o Rei messiânico entraria em Jerusalém — e por que isso era surpreendente?", opts:["Em cavalo branco — sinal de paz","A pé — sinal de humildade","Montado num jumento — sinal de paz, não guerra","Em carro de fogo — sinal de poder divino"], ans:2,
+    exp:"Um rei conquistador chegaria a cavalo. O Messias de Zacarias escolheu um jumento — símbolo de paz. Mateus 21 cita esta profecia explicitamente na entrada triunfal de Jesus." },
+  { q:"Daniel 7 apresenta a visão do 'Filho do Homem' recebendo um reino eterno. Quantas vezes Jesus usou esse título nos Evangelhos?", opts:["10 vezes","Apenas 3 vezes — uma por Evangelho","Aproximadamente 80 vezes","Nunca — era título que outros usavam para Ele"], ans:2,
+    exp:"Jesus usou 'Filho do Homem' cerca de 80 vezes — era seu título favorito. Quando o usou diante do sumo sacerdote citando Daniel 7, foi acusado de blasfêmia." },
+  { q:"O casamento de Oséias com Gômer, a esposa infiel que ele comprou de volta, prefigura qual verdade central do Evangelho?", opts:["A segunda vinda de Cristo em julgamento","O amor redentor de Cristo pela Igreja — graça sem merecimento","A criação do mundo por amor","A ressurreição dos crentes no último dia"], ans:1,
+    exp:"Efésios 5:25 cita diretamente o amor de Cristo pela Igreja como o modelo do amor do marido. Oséias comprou Gômer de volta não porque ela merecia, mas por amor — isso é graça." },
+  { q:"Malaquias é o último livro do AT e termina prometendo um mensageiro que prepararia o caminho. Após essa promessa, quantos anos Israel ficou sem um profeta?", opts:["100 anos","200 anos","400 anos","70 anos — o período do exílio"], ans:2,
+    exp:"Após Malaquias, vieram 400 anos de silêncio profético. O próximo profeta foi João Batista — que os quatro Evangelhos identificam como o mensageiro prometido em Malaquias 3:1." }
+];
+
+let done = new Set();
+let openIdx = null;
+let qIdx = 0, score = 0, quizActive = false;
+
+function updateProgress(){
+  const n = done.size;
+  document.getElementById('prog-text').textContent = `${n} de 39`;
+  document.getElementById('prog-fill').style.width = `${(n/39)*100}%`;
+  if(n===39 && !quizActive){ quizActive=true; startQuiz(); }
+}
+
+const SECTIONS = [
+  {label:'Pentateuco', range:[0,4]},
+  {label:'Livros Históricos', range:[5,16]},
+  {label:'Livros Poéticos', range:[17,22]},
+  {label:'Livros Proféticos', range:[23,38]}
+];
+
+function renderTrail(){
+  const trail = document.getElementById('trail');
+  SECTIONS.forEach(sec=>{
+    const lbl = document.createElement('div');
+    lbl.className = 'section-label';
+    lbl.textContent = sec.label;
+    trail.appendChild(lbl);
+    const wrap = document.createElement('div');
+    wrap.className = 'scroll-container';
+    for(let i=sec.range[0];i<=sec.range[1];i++){
+      wrap.appendChild(buildScroll(i));
+    }
+    trail.appendChild(wrap);
+  });
+}
+
+function buildScroll(i){
+  const b = BOOKS[i];
+  const unlocked = i===0 || done.has(i-1) || done.has(i);
+  const isDone = done.has(i);
+  const isOpen = openIdx===i;
+
+  const item = document.createElement('div');
+  item.className = `scroll-item ${isDone?'done':unlocked?'unlocked':'locked'}`;
+  item.id = `s${i}`;
+
+  item.innerHTML = `
+    <div class="scroll-roller"></div>
+    <div class="scroll-face">
+      <div class="num-badge">${isDone?'✓':i+1}</div>
+      <div class="face-text">
+        <div class="face-book">${b.name}</div>
+        <div class="face-tag">${b.tag}</div>
+      </div>
+      ${unlocked ? `<div class="face-arrow">▾</div>` : `<div class="lock-icon">🔒</div>`}
+    </div>
+    <div class="scroll-body" style="max-height:${isOpen?'900px':'0'}">
+      <div class="aged-lines"></div>
+      <div class="scroll-inner">
+        <div class="context-block">
+          <div class="ctx-label">📜 Contexto</div>
+          <div class="ctx-text">${b.context}</div>
+        </div>
+        <div class="pf-grid">
+          <div class="pf-card pf-prophecy">
+            <div class="pf-label">🕍 Profecia no AT</div>
+            <div class="pf-verse">"${b.prophecy.v}"</div>
+            <div class="pf-ref">— ${b.prophecy.r}</div>
+          </div>
+          <div class="pf-card pf-fulfillment">
+            <div class="pf-label">✦ Cumprimento em Jesus</div>
+            <div class="pf-verse">"${b.fulfillment.v}"</div>
+            <div class="pf-ref">— ${b.fulfillment.r}</div>
+          </div>
+        </div>
+        <div class="connection-block">
+          <div class="conn-label">🔗 A Conexão</div>
+          <div class="conn-text">${b.connection}</div>
+        </div>
+        ${isDone
+          ? `<div class="done-stamp">✓ Pergaminho lido</div>`
+          : `<button class="btn-done" onclick="markDone(event,${i})">Li este pergaminho — Avançar →</button>`
+        }
+      </div>
+    </div>
+    <div class="scroll-roller-bottom"></div>`;
+
+  item.querySelector('.scroll-face').addEventListener('click',()=>toggle(i));
+  return item;
+}
+
+function toggle(i){
+  const el = document.getElementById(`s${i}`);
+  if(el.classList.contains('locked')) return;
+  const body = el.querySelector('.scroll-body');
+  if(openIdx===i){
+    openIdx=null; body.style.maxHeight='0';
+    el.querySelector('.face-arrow') && (el.querySelector('.face-arrow').style.transform='');
+  } else {
+    if(openIdx!==null){
+      const prev=document.getElementById(`s${openIdx}`);
+      if(prev){ prev.querySelector('.scroll-body').style.maxHeight='0'; prev.classList.remove('open');
+        const arr=prev.querySelector('.face-arrow'); if(arr) arr.style.transform=''; }
+    }
+    openIdx=i; body.style.maxHeight='900px'; el.classList.add('open');
+    const arr=el.querySelector('.face-arrow'); if(arr) arr.style.transform='rotate(180deg)';
+    setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+  }
+}
+
+function markDone(e,i){
+  e.stopPropagation();
+  done.add(i);
+  updateProgress();
+  const cur=document.getElementById(`s${i}`);
+  openIdx=null;
+  cur.replaceWith(buildScroll(i));
+  if(i+1<39){
+    const nxt=document.getElementById(`s${i+1}`);
+    if(nxt){
+      const fresh=buildScroll(i+1);
+      nxt.replaceWith(fresh);
+      setTimeout(()=>fresh.scrollIntoView({behavior:'smooth',block:'center'}),200);
+    }
+  }
+}
+
+// ── QUIZ ──
+function startQuiz(){
+  document.getElementById('quiz-section').scrollIntoView({behavior:'smooth',block:'start'});
+  renderQ();
+}
+
+function renderQ(){
+  const body=document.getElementById('quiz-body');
+  if(qIdx>=QUIZ.length){ showResult(); return; }
+  const q=QUIZ[qIdx];
+  const pct=Math.round((qIdx/QUIZ.length)*100);
+  body.innerHTML=`
+    <div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:${pct}%"></div></div>
+    <div style="font-size:11px;letter-spacing:2px;color:#8a6030;margin-bottom:16px;text-transform:uppercase">Pergunta ${qIdx+1} de ${QUIZ.length}</div>
+    <div class="quiz-q">${q.q}</div>
+    <div class="quiz-opts">
+      ${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-fb" id="qfb"></div>
+    <button class="btn-next-q" id="qnxt" onclick="nextQ()">Próxima pergunta →</button>`;
+}
+
+function answer(i){
+  const q=QUIZ[qIdx];
+  document.querySelectorAll('.quiz-opt').forEach(o=>o.disabled=true);
+  const fb=document.getElementById('qfb');
+  if(i===q.ans){ document.querySelectorAll('.quiz-opt')[i].classList.add('correct'); score++;
+    fb.innerHTML=`✓ Correto! <em>${q.exp}</em>`; fb.style.color='#2a6a3a';
+  } else { document.querySelectorAll('.quiz-opt')[i].classList.add('wrong');
+    document.querySelectorAll('.quiz-opt')[q.ans].classList.add('correct');
+    fb.innerHTML=`✗ Incorreto. <em>${q.exp}</em>`; fb.style.color='#8a2020';
+  }
+  document.getElementById('qnxt').classList.add('show');
+}
+
+function nextQ(){ qIdx++; renderQ(); }
+
+function showResult(){
+  const pct=Math.round((score/QUIZ.length)*100);
+  const msg = pct>=90 ? "Seus olhos foram abertos. Você vê Cristo em cada página das Escrituras." :
+              pct>=70 ? "Você está aprendendo a ler a Bíblia com olhos novos. Continue a jornada." :
+              pct>=50 ? "Um bom começo. Cada leitura revela mais — volte aos pergaminhos e repita." :
+              "As Escrituras são profundas. Releia os pergaminhos e deixe que a conexão se firme.";
+  document.getElementById('quiz-body').innerHTML=`
+    <div class="quiz-result">
+      <div class="result-num">${score}/${QUIZ.length}</div>
+      <div class="result-sub">${pct}% de acerto</div>
+      <div class="result-msg">"${msg}"</div>
+      <button class="btn-restart" onclick="restartQuiz()">↺ Refazer o Quiz</button>
+    </div>`;
+}
+
+function restartQuiz(){ qIdx=0; score=0; renderQ(); }
+
+// INIT
+renderTrail();
+updateProgress();
+document.getElementById('quiz-body').innerHTML=`
+  <div class="quiz-locked">
+    <span class="lock">🔒</span>
+    Complete a jornada pelos 39 pergaminhos para desbloquear o Teste do Escriba.
+  </div>`;
+</script>
+</body>
+</html>

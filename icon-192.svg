@@ -1,15 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
-  <rect width="192" height="192" rx="32" fill="#1a1208"/>
-  <rect x="50" y="35" width="92" height="122" rx="6" fill="#f5e8c8" opacity="0.9"/>
-  <rect x="50" y="35" width="22" height="122" rx="6" fill="#c9a84c" opacity="0.2"/>
-  <line x1="80" y1="55" x2="128" y2="55" stroke="#d4c4a0" stroke-width="1.5"/>
-  <line x1="80" y1="67" x2="128" y2="67" stroke="#d4c4a0" stroke-width="1.5"/>
-  <line x1="80" y1="79" x2="115" y2="79" stroke="#d4c4a0" stroke-width="1.5"/>
-  <line x1="80" y1="97" x2="128" y2="97" stroke="#d4c4a0" stroke-width="1.5"/>
-  <line x1="80" y1="109" x2="128" y2="109" stroke="#d4c4a0" stroke-width="1.5"/>
-  <line x1="80" y1="121" x2="110" y2="121" stroke="#d4c4a0" stroke-width="1.5"/>
-  <line x1="80" y1="139" x2="128" y2="139" stroke="#d4c4a0" stroke-width="1.5"/>
-  <rect x="88" y="80" width="4" height="32" rx="1" fill="#c9a84c" opacity="0.6"/>
-  <rect x="80" y="88" width="20" height="4" rx="1" fill="#c9a84c" opacity="0.6"/>
-  <text x="96" y="182" text-anchor="middle" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#c9a84c">39 LIVROS</text>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2a1f08"/>
+      <stop offset="100%" stop-color="#0e0a04"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldScroll" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f0d878"/>
+      <stop offset="50%" stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#7a5a18"/>
+    </radialGradient>
+    <radialGradient id="parchment" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f5e8c0"/>
+      <stop offset="100%" stop-color="#d4b870"/>
+    </radialGradient>
+    <radialGradient id="crossGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8e0" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#e8c878" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bg)" rx="48"/>
+
+  <!-- Subtle glow center -->
+  <ellipse cx="200" cy="185" rx="140" ry="120" fill="url(#glow)"/>
+
+  <!-- Scroll body (parchment) -->
+  <rect x="90" y="110" width="220" height="170" rx="4" fill="url(#parchment)" filter="url(#shadow)"/>
+
+  <!-- Scroll aged texture lines -->
+  <line x1="110" y1="140" x2="290" y2="140" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+  <line x1="110" y1="155" x2="290" y2="155" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+  <line x1="110" y1="170" x2="290" y2="170" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+  <line x1="110" y1="215" x2="290" y2="215" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+  <line x1="110" y1="230" x2="290" y2="230" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+  <line x1="110" y1="245" x2="290" y2="245" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+  <line x1="110" y1="260" x2="290" y2="260" stroke="#c9a060" stroke-width="0.7" stroke-opacity="0.4"/>
+
+  <!-- Top roller -->
+  <rect x="80" y="103" width="240" height="18" rx="9" fill="url(#goldScroll)" filter="url(#shadow)"/>
+  <circle cx="82" cy="112" r="11" fill="url(#goldScroll)"/>
+  <circle cx="82" cy="112" r="6" fill="#f0d070" opacity="0.6"/>
+  <circle cx="318" cy="112" r="11" fill="url(#goldScroll)"/>
+  <circle cx="318" cy="112" r="6" fill="#f0d070" opacity="0.6"/>
+
+  <!-- Bottom roller -->
+  <rect x="80" y="279" width="240" height="18" rx="9" fill="url(#goldScroll)" filter="url(#shadow)"/>
+  <circle cx="82" cy="288" r="11" fill="url(#goldScroll)"/>
+  <circle cx="82" cy="288" r="6" fill="#f0d070" opacity="0.6"/>
+  <circle cx="318" cy="288" r="11" fill="url(#goldScroll)"/>
+  <circle cx="318" cy="288" r="6" fill="#f0d070" opacity="0.6"/>
+
+  <!-- Cross glow on parchment -->
+  <ellipse cx="200" cy="192" rx="44" ry="44" fill="url(#crossGlow)" opacity="0.7"/>
+
+  <!-- Cross -->
+  <rect x="193" y="150" width="14" height="84" rx="3" fill="#8b5e10" filter="url(#softglow)"/>
+  <rect x="165" y="174" width="70" height="14" rx="3" fill="#8b5e10" filter="url(#softglow)"/>
+  <rect x="195" y="150" width="5" height="84" rx="2" fill="#d4a040" opacity="0.5"/>
+  <rect x="165" y="176" width="70" height="5" rx="2" fill="#d4a040" opacity="0.5"/>
+
+  <!-- Light rays from cross -->
+  <line x1="200" y1="192" x2="200" y2="118" stroke="#e8c060" stroke-width="1" stroke-opacity="0.2"/>
+  <line x1="200" y1="192" x2="270" y2="140" stroke="#e8c060" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="200" y1="192" x2="130" y2="140" stroke="#e8c060" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- Ornament top -->
+  <text x="200" y="96" text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.7" font-family="serif">✦</text>
+
+  <!-- Bottom text area -->
+  <text x="200" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="bold" letter-spacing="2" fill="#c9a84c">ENCONTRANDO JESUS</text>
+  <line x1="120" y1="348" x2="280" y2="348" stroke="#c9a84c" stroke-width="0.8" stroke-opacity="0.5"/>
+  <text x="200" y="364" text-anchor="middle" font-family="Georgia, serif" font-size="10" letter-spacing="3" fill="#8a6830">NO ANTIGO TESTAMENTO</text>
+
 </svg>
